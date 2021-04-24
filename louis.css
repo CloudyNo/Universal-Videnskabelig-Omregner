@@ -1,18 +1,18 @@
-html { 
+html{ 
     
 }
-head {
+head{
     
 }
 body {
-    background-color: ;
+    background-color: 081043;
 }
 h1 {
     font-family: sans-serif;
     font-size: 80px;
     text-align: center;
     padding-top: 9px;
-    color: ;
+    color: 081043;
 }
 #wrapper1 {
     margin-left: auto;
@@ -22,15 +22,12 @@ h1 {
 #header {
     height: 120px;
     width: auto;
-    background-color: ;
 }
 #content1 {
     height: 160px;
     width: auto;
-    background-color: ;
 }
 #content2 {
     height: 220px;
     width: auto;
-    background-color: ;
 }

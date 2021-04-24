@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet" href="louis.css">
+        <link rel="stylesheet" href="./louis.css">
         <script>
             function validate() {
                 var a = document.forms["justform"]["tal1"].value;
@@ -14,7 +14,7 @@
                     }
                     else {
                         var d = ((a/100)*(b/1000)*(789/12));
-                        alert("unga bunga, hvad end du har drukket så svarer det til: " + d + " genstande");
+                        swal("unga bunga, hvad end du har drukket så svarer det til: " + d + " genstande", "succes");
                     }
             }
         </script>
@@ -22,18 +22,17 @@
     <body>
         <div id="wrapper1">
             <div id="header">
-                <h1>Louis Nielsen<img src="spec.png" style width="155"></h1>
+                <h1>Louis Nielsen</h1>
             </div>
             <div id="content1">
                 <p>
                     Skulle have gået til Luois Nilsen, istedet for dette forfærdelige sted...
                 </p>
-                <img src="onk.jpg" style width="100%">
             </div>
             <div id="content2">
                 <form name="justform" onsubmit="return validate()" method="post">
                     cl: <input type="number" name="tal1"><br><br>
-                    vol: <input type="number" name="tal2"><br><br>
+                    vol: <input type="number" step="0.01" name="tal2"><br><br>
                     <input type="submit" value="cock">
                     
                 </form>
