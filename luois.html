@@ -6,8 +6,8 @@
             function validate() {
                 var a = document.forms["justform"]["tal1"].value;
                 var b = document.forms["justform"]["tal2"].value;
-                a = parseInt(a);
-                b = parseInt(b);
+                a = parseFloat(a);
+                b = parseFloat(b);
                     if (a == "") {
                         alert("indtast et tal");
                         return false;
