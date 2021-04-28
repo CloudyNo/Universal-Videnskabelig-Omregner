@@ -1,23 +1,38 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>I fucking hate myself right now</title>
+        <title>UVO</title>
         <link rel="stylesheet" href="test.css">
+        <script>
+
+        </script>
     </head>
     <body>
-        <div class="wrap">
+        <div class="container">
+            <div class="inpt">
+                <input>
+                <input>
+                <input>
+            </div>
             <button class="button" onclick="clicked()" id="button">
                 nut
             </button>
         </div>
         <div id="popup">
-            <p>Hello</p>
+            <p>NUT</p>
         </div>
         <script>
-            var x = document.getElementById("popup").style.display = "none"
+            var i = false;
+            document.getElementById("popup").style.display = "none";
             function clicked() {
-                document.getElementById("popup").style.display = "block"
-            }
+                if (i == false) {
+                    document.getElementById("popup").style.display = "block";
+                    i = true;
+                } else {
+                    document.getElementById("popup").style.display = "none";
+                    i = false;
+                }
+            } 
         </script>
     </body>
 </html>
