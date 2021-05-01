@@ -12,10 +12,11 @@ body {
 .inpt {
     margin: auto;
     padding: 10px;
-    background-color: black;
+    background-color: lightgrey;
     color: white;
     border-radius: 16px;
     border: solid 4px;
+    border-color: coral;
 }
 
 input {
@@ -24,7 +25,11 @@ input {
     background-color: coral;
     border-radius: 8px;
     border-color: white;
-    border-width: 5px;
+    border-width: 2px;
+}
+
+input:focus, textarea:focus, select:focus {
+    outline: 0px !important;
 }
 
 .button {
