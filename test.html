@@ -37,14 +37,16 @@
             }
 
             async function update() {
-                while (true) {
+                
                     var input1 = document.getElementById("ip1").value;
                     console.log(input1)
+                    // variabel angivning som tager elementet fra input1 og isolerer alle numeraler ved hjælp af regex
                     var num1 = input1.replace(/[^\d\.]+/g, '');
+                    // variabel angivning som tager elementet fra input1 og isolerer alle ikke-numeraler ved hjælp af regex
                     var alp1 = input1.replace(/[^\D\.]+/g, '');
                     document.getElementById("ip2").value = num1;                    
                     document.getElementById("ip3").value = alp1;
-                }
+                
             }
         </script>
     </body>
