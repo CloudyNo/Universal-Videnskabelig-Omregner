@@ -3,11 +3,9 @@
     <head>
         <title>UVO</title>
         <link rel="stylesheet" href="test.css">
-        <scrpt>
-            var input1 = document.getElementById["ip1"].value;
-            var input2 = document.getElementById["ip2"].value;
-            var input3 = document.getElementById["ip3"].value;
-        </scrpt>
+        <script>
+            
+        </script>
     </head>
     <body>
         <div class="container">
@@ -16,12 +14,12 @@
                 <input id="ip2">
                 <input id="ip3">
             </div>
-            <button class="button" onclick="clicked()">
+            <button class="button" onclick="update()">
                 nut
             </button>
         </div>
         <div id="popup">
-            <p>NUT</p>
+            <p id="output"></p>
         </div>
         <script>
             var i = false;
@@ -29,12 +27,25 @@
             function clicked() {
                 if (i == false) {
                     document.getElementById("popup").style.display = "block";
-                    i = true;
+                    i = true;                
                 } else {
                     document.getElementById("popup").style.display = "none";
                     i = false;
                 }
-            } 
+                //var input2 = document.getElementById["ip2"].value;
+                //var input3 = document.getElementById["ip3"].value;
+            }
+
+            async function update() {
+                while (true) {
+                    var input1 = document.getElementById("ip1").value;
+                    console.log(input1)
+                    var num1 = input1.replace(/[^\d\.]+/g, '');
+                    var alp1 = input1.replace(/[^\D\.]+/g, '');
+                    document.getElementById("ip2").value = num1;                    
+                    document.getElementById("ip3").value = alp1;
+                }
+            }
         </script>
     </body>
 </html>
