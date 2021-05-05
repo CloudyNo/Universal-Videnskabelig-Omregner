@@ -10,11 +10,12 @@
     <body>
         <div class="container">
             <div class="inpt">
-                <input id="ip1">
-                <input id="ip2">
-                <input id="ip3">
+                <!--input der kører functionen 'update' hver gang der er nyt input-->
+                <input id="ip1" oninput="update()">
+                <input id="ip2" oninput="update()">
+                <input id="ip3" oninput="update()">
             </div>
-            <button class="button" onclick="update()">
+            <button class="button" onclick="clicked()">
                 nut
             </button>
         </div>
@@ -27,26 +28,56 @@
             function clicked() {
                 if (i == false) {
                     document.getElementById("popup").style.display = "block";
-                    i = true;                
+                    i = true;
                 } else {
                     document.getElementById("popup").style.display = "none";
                     i = false;
-                }
-                //var input2 = document.getElementById["ip2"].value;
-                //var input3 = document.getElementById["ip3"].value;
+                };
+
+                
             }
 
             async function update() {
-                
-                    var input1 = document.getElementById("ip1").value;
-                    console.log(input1)
-                    // variabel angivning som tager elementet fra input1 og isolerer alle numeraler ved hjælp af regex
-                    var num1 = input1.replace(/[^\d\.]+/g, '');
-                    // variabel angivning som tager elementet fra input1 og isolerer alle ikke-numeraler ved hjælp af regex
-                    var alp1 = input1.replace(/[^\D\.]+/g, '');
-                    document.getElementById("ip2").value = num1;                    
-                    document.getElementById("ip3").value = alp1;
-                
+                // variabel angivning som tager input fra 'ip1' og angiver det som input1
+                var input1 = document.getElementById("ip1").value;
+                console.log("inp1: "+input1)
+                // variabel angivning som tager elementet fra input1 og isolerer alle numeraler ved hjælp af regex
+                var num1 = input1.replace(/[^\d\.]+/g, '');
+                console.log("num1: "+num1)
+                // variabel angivning som tager elementet fra input1 og isolerer alle ikke-numeraler ved hjælp af regex
+                var alp1 = input1.replace(/[^\D\.]+/g, '');
+                console.log("alp1: "+alp1)
+
+                // gentagelse af foroven bare med input2
+                var input2 = document.getElementById("ip2").value;
+                console.log("inp2: "+ input2)
+                var num2 = input2.replace(/[^\d\.]+/g, '');
+                console.log("num2: "+ num2)
+                var alp2 = input2.replace(/[^\D\.]+/g, '');
+                console.log("alp2: "+ alp2)
+
+                // gentagelse af foroven bare med input3
+                var input3 = document.getElementById("ip3").value;
+                console.log("inp3: "+ input3)
+                var num3 = input3.replace(/[^\d\.]+/g, '');
+                console.log("num3: "+ num3)
+                var alp3 = input3.replace(/[^\D\.]+/g, '');
+                console.log("alp3: "+ alp3)
+
+                if (alp1.includes("l")==true) {
+                    if (alp1.includes("m")==true) {
+                        console.log("milliliter")
+                    }
+                    else if (alp1.includes("mikro")==true || alp1.includes("µ")==true || alp1.includes("u")==true) {
+                        console.log("mikroliter")
+                    }
+                    else if (alp1.includes("d")==true) {
+                        console.log("deciliter")
+                    }
+                    else {
+                        console.log("liter")
+                    }
+                }
             }
         </script>
     </body>
