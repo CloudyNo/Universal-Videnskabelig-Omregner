@@ -32,9 +32,7 @@
                 } else {
                     document.getElementById("popup").style.display = "none";
                     i = false;
-                };
-
-                
+                };   
             }
 
             async function update() {
@@ -94,12 +92,15 @@
                 }
 
                 mol: if (alp1.includes("mol")==true) {
-                    if (alp1.includes("mm")==false) {
+                    if (alp1.includes("mikro")==true || alp1.includes("µ")==true || alp1.includes("u")==true) {
+                        console.log("mikromol")
+                    }
+                    else if (alp1.includes("d")==true) {
+                        console.log("decimol")
+                    }
+                    else if (alp1.includes("mm")==false) {
                         console.log("mol")
                         break mol;
-                    }
-                    else if (alp1.includes("mikro")==true || alp1.includes("µ")==true || alp1.includes("u")==true) {
-                        console.log("mikromol")
                     }
                     else if (alp1.includes("m")==true || alp1.includes("milli")==true) {
                         console.log("millimol")
