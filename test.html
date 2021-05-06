@@ -40,42 +40,69 @@
             async function update() {
                 // variabel angivning som tager input fra 'ip1' og angiver det som input1
                 var input1 = document.getElementById("ip1").value;
-                console.log("inp1: "+input1)
                 // variabel angivning som tager elementet fra input1 og isolerer alle numeraler ved hjælp af regex
                 var num1 = input1.replace(/[^\d\.]+/g, '');
-                console.log("num1: "+num1)
                 // variabel angivning som tager elementet fra input1 og isolerer alle ikke-numeraler ved hjælp af regex
                 var alp1 = input1.replace(/[^\D\.]+/g, '');
-                console.log("alp1: "+alp1)
 
                 // gentagelse af foroven bare med input2
                 var input2 = document.getElementById("ip2").value;
-                console.log("inp2: "+ input2)
                 var num2 = input2.replace(/[^\d\.]+/g, '');
-                console.log("num2: "+ num2)
                 var alp2 = input2.replace(/[^\D\.]+/g, '');
-                console.log("alp2: "+ alp2)
 
                 // gentagelse af foroven bare med input3
                 var input3 = document.getElementById("ip3").value;
-                console.log("inp3: "+ input3)
                 var num3 = input3.replace(/[^\d\.]+/g, '');
-                console.log("num3: "+ num3)
                 var alp3 = input3.replace(/[^\D\.]+/g, '');
-                console.log("alp3: "+ alp3)
 
-                if (alp1.includes("l")==true) {
-                    if (alp1.includes("m")==true) {
-                        console.log("milliliter")
+                liter: if (alp1.includes("l")==true) {
+                    if (alp1.includes("mol")==true) {
+                        break liter;
                     }
                     else if (alp1.includes("mikro")==true || alp1.includes("µ")==true || alp1.includes("u")==true) {
                         console.log("mikroliter")
+                        break liter;
+                    }
+                    else if (alp1.includes("m")==true || alp1.includes("milli")==true) {
+                        console.log("milliliter")
                     }
                     else if (alp1.includes("d")==true) {
                         console.log("deciliter")
                     }
                     else {
                         console.log("liter")
+                    }
+                }
+
+                gram: if (alp1.includes("g")==true) {
+                    if (alp1.includes("mikro")==true || alp1.includes("µ")==true || alp1.includes("u")==true) {
+                        console.log("mikrogram")
+                        break gram;
+                    }
+                    else if (alp1.includes("m")==true || alp1.includes("milli")==true) {
+                        console.log("milligram")
+                    } 
+                    else if (alp1.includes("d")==true) {
+                        console.log("decigram")
+                    }
+                    else if (alp1.includes("k")==true) {
+                        console.log("kilogram")
+                    }
+                    else {
+                        console.log("gram")
+                    }
+                }
+
+                mol: if (alp1.includes("mol")==true) {
+                    if (alp1.includes("m", 2)==false) {
+                        console.log("mol")
+                        break mol;
+                    }
+                    else if (alp1.includes("mikro")==true || alp1.includes("µ")==true || alp1.includes("u")==true) {
+                        console.log("mikromol")
+                    }
+                    else if (alp1.includes("m")==true || alp1.includes("milli")==true) {
+                        console.log("millimol")
                     }
                 }
             }
