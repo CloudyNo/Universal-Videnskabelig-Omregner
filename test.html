@@ -13,6 +13,7 @@
                 <!--input der kører functionen 'update' hver gang der er nyt input-->
                 <input id="ip1" oninput="update(), doit()">
                 <input id="ip2" oninput="update(), doit()">
+                <!--input der ikke kører nogen function da det er vores output-->
                 <input id="ip3">
             </div>
             <button class="button" onclick="clicked()">
@@ -23,6 +24,7 @@
             <p id="output"></p>
         </div>
         <script>
+            // lang: js
             var i = false;
             document.getElementById("popup").style.display = "none";
             function clicked() {
@@ -40,7 +42,6 @@
             var molar;
             var stof;
 
-
             async function update() {
                 // variabel angivning som tager input fra 'ip1' og angiver det som input1
                 var input1 = document.getElementById("ip1").value;
@@ -54,35 +55,28 @@
                 var num2 = input2.replace(/[^\d\.]+/g, '');
                 var alp2 = input2.replace(/[^\D\.]+/g, '');              
 
-                
-
                 // Genkendelse af enhed og formel
                 gram1: if (alp1.includes("g")==true) {
                     if (alp1.includes("mikro")==true || alp1.includes("µ")==true || alp1.includes("u")==true) {
                         console.log("mikrogram")
                         masse = 0.001;
-                        console.log(masse)
-                        break gram1
+                        break gram1;
                     }
                     else if (alp1.includes("m")==true || alp1.includes("milli")==true) {
                         console.log("milligram")
                         masse = 0.01;
-                        console.log(masse)
                     } 
                     else if (alp1.includes("d")==true) {
                         console.log("decigram")
                         masse = 0.1;
-                        console.log(masse)
                     }
                     else if (alp1.includes("k")==true) {
                         console.log("kilogram")
                         masse = 1000;
-                        console.log(masse)
                     }
                     else {
                         console.log("gram")
-                        let masse = 1;
-                        console.log(masse)
+                        masse = 1;
                     }
                 }
 
@@ -90,23 +84,19 @@
                     if (alp1.includes("mikro")==true || alp1.includes("µ")==true || alp1.includes("u")==true) {
                         console.log("mikromol")
                         stof = 0.001;
-                        console.log(stof)
                     }
                     else if (alp1.includes("d")==true) {
                         console.log("decimol")
                         stof = 0.1;
-                        console.log(stof)
                     }
                     else if (alp1.includes("mm")==false) {
                         console.log("mol")
                         stof = 1;
-                        console.log(stof)
                         break mol1;
                     }
                     else if (alp1.includes("m")==true || alp1.includes("milli")==true) {
                         console.log("millimol")
                         stof = 0.01;
-                        console.log(stof)
                     }
                 }
 
@@ -115,28 +105,23 @@
                     if (alp2.includes("mikro")==true || alp2.includes("µ")==true || alp2.includes("u")==true) {
                         console.log("mikrogram")
                         masse = 0.001;
-                        console.log(masse)
                         break gram2
                     }
                     else if (alp2.includes("m")==true || alp2.includes("milli")==true) {
                         console.log("milligram")
                         masse = 0.01;
-                        console.log(masse)
                     } 
                     else if (alp2.includes("d")==true) {
                         console.log("decigram")
                         masse = 0.1;
-                        console.log(masse)
                     }
                     else if (alp2.includes("k")==true) {
                         console.log("kilogram")
                         masse = 1000;
-                        console.log(masse)
                     }
                     else {
                         console.log("gram")
                         masse = 1;
-                        console.log(masse)
                     }
                 }
 
@@ -144,41 +129,50 @@
                     if (alp2.includes("mikro")==true || alp2.includes("µ")==true || alp2.includes("u")==true) {
                         console.log("mikromol")
                         stof = 0.001;
-                        console.log(stof)
                     }
                     else if (alp2.includes("d")==true) {
                         console.log("decimol")
                         stof = 0.1;
-                        console.log(stof)
                     }
                     else if (alp2.includes("mm")==false) {
                         console.log("mol")
                         stof = 1;
-                        console.log(stof)
                         break mol2;
                     }
                     else if (alp2.includes("m")==true || alp2.includes("milli")==true) {
                         console.log("millimol")
                         stof = 0.01;
-                        console.log(stof)
                     }
                 }
             }
 
             async function doit() {
                 // siden 'stof' og 'masse' er bestemt inden i en anden function, så er den blevet bestemt globalt
-                console.log("check: "+stof+", "+masse);
-                if (masse !== null && stof !== null) {
+                if (masse !== undefined && stof !== undefined) {
                     console.log("masse & stof")
-                } else if (masse !== null && molar !== null) {
+                    masse = undefined;
+                    molar = undefined;
+                    stof = undefined;
+                } else if (masse !== undefined && molar !== undefined) {
                     console.log("mass & molar mass")
-                } else if (stof !== null && molar !== null) {
+                    masse = undefined;
+                    molar = undefined;
+                    stof = undefined;
+                } else if (stof !== undefined && molar !== undefined) {
                     console.log("amount & molar mass")
+                    masse = undefined;
+                    molar = undefined;
+                    stof = undefined;
                 } else {
                     console.log("not enough")
+                    masse = undefined;
+                    molar = undefined;
+                    stof = undefined;
                     return false;
                 }
             }
+
+            // endlang
         </script>
     </body>
 </html>
