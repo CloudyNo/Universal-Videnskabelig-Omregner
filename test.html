@@ -3,6 +3,7 @@
     <head>
         <title>UVO</title>
         <link rel="stylesheet" href="test.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script>
             
         </script>
@@ -16,9 +17,18 @@
                 <!--input der ikke kører nogen function da det er vores output-->
                 <input id="ip3">
             </div>
-            <button class="button" onclick="clicked()">
-                nut
-            </button>
+            <div class="button">
+                Hydrogen
+            </div>
+            <div class="button">
+                Oxygen
+            </div>
+            <div class="button">
+                Carbon
+            </div>
+            <div class="button">
+                Bromide
+            </div>
         </div>
         <div id="popup">
             <p id="output"></p>
@@ -27,15 +37,6 @@
             // lang: js
             var i = false;
             document.getElementById("popup").style.display = "none";
-            function clicked() {
-                if (i == false) {
-                    document.getElementById("popup").style.display = "block";
-                    i = true;
-                } else {
-                    document.getElementById("popup").style.display = "none";
-                    i = false;
-                };   
-            }
 
             // Bestemmelse af variabler 'stof' og 'masse' så de er globale og kan ændres inde i en funktion
             var masse;

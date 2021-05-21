@@ -32,14 +32,14 @@ input:focus, textarea:focus, select:focus {
     outline: 0px !important;
 }
 
-button {
+.button {
     background: #3498db;
     border-radius: 3px;
     color: white;
     cursor: pointer;
 }
 
-button:hover {
+div.button:hover {
     background-color: blueviolet;
 }
 
