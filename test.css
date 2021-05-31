@@ -9,6 +9,10 @@ body {
     position: absolute;
 }
 
+.container2 {
+    position: absolute;
+}
+
 .inpt {
     margin: auto;
     padding: 10px;
@@ -37,6 +41,9 @@ input:focus, textarea:focus, select:focus {
     border-radius: 3px;
     color: white;
     cursor: pointer;
+    width: auto;
+    padding: auto;
+    display: inline-block;
 }
 
 div.button:hover {
@@ -54,4 +61,8 @@ div.button:hover {
     border-radius: 14px;
     text-align: center;
     font-size: 50px;
+}
+
+#ip3 {
+    display: inline-block;
 }
