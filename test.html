@@ -9,6 +9,8 @@
         </script>
     </head>
     <body>
+        <button id="mode" onclick="mode()">
+        </button>
         <div class="container">
             <!--input der kører functionen 'update' hver gang der er nyt input-->
             <input class="button" id="ip1" oninput="update(), doit()"><br>
@@ -22,19 +24,16 @@
                 <div class="button">
                     Hydrogen
                 </div>
-                <div class="button" onclick="update(), doit(), oxygen()">
+                <div class="button" onclick="update(), molar()">
                     Oxygen
                 </div>
                 <div class="button">
                     Carbon
                 </div>
                 <div class="button">
-                    Bromide
+                    Nitrogen
                 </div>
             </div>
-        </div>
-        <div id="popup">
-            <p id="output"></p>
         </div>
         <script>
             // lang: js
@@ -45,10 +44,6 @@
             var masse;
             var molar;
             var stof;
-
-            function oxygen() {
-                var molar = 15.9994;
-            }
 
             async function update() {
                 // variabel angivning som tager input fra 'ip1' og angiver det som input1
@@ -154,6 +149,11 @@
                 }
             }
 
+            function molar() {
+                molar = 1;
+                doit();
+            }
+
             async function doit() {
                 console.log(masse+", "+molar+", "+stof)
                 // siden 'stof' og 'masse' er bestemt inden i en anden function, så er den blevet bestemt globalt
@@ -178,6 +178,18 @@
                     molar = undefined;
                     stof = undefined;
                     return false;
+                }
+            }
+
+            var nut = 1;
+
+            function mode() {
+                if  (nut == 1) {
+                    document.body.classList.add("light-theme");
+                    nut = 0;
+                } else {
+                    document.body.classList.remove("light-theme");
+                    nut = 1;
                 }
             }
 

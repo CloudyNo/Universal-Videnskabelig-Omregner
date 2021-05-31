@@ -2,6 +2,11 @@ body {
     font-family: 'Arial';
     margin: 0;
     padding: 0;
+    background-color: #474A48;
+}
+
+body.light-theme {
+    background-color: #EEC6CA;
 }
 
 .container {
@@ -9,37 +14,30 @@ body {
     margin-right: 33%;
     margin-top: 10%;
     position: center;
-    background-image: url("/Untitled.png");
+    background-image: url("Untitled.png");
     padding: 10px;
     border-radius: 14px;
+}
+
+body.light-theme .container {
+    background-image: url("Untitled2.png");
 }
 
 .container2 {
     position: center;
 }
 
-.inpt {
-    margin: auto;
-    background-color: lightgrey;
-    color: white;
-    border-radius: 16px;
-    border: solid 4px;
-    border-color: coral;
-    padding: 3px;
-    display: inline-block;
-}
-
 input:focus, textarea:focus, select:focus {
     outline: 0px !important;
-    background-color: blueviolet;
+    background-color: #537A5A;
 }
 
 input:hover {
-    background-color: blueviolet;
+    background-color: #537A5A;
 }
 
-p {
-    float: top;
+body.light-theme input:hover {
+    background-color: #BCF4DE;
 }
 
 input {
@@ -48,36 +46,46 @@ input {
 }
 
 .button {
-    background: #3498db;
+    background: #9AE19D;
     border-radius: 4px;
-    color: white;
     width: auto;
     display: inline-block;
     padding: 3px;
     border: 0px;
+    color: #474A48;
 }
 
-
+body.light-theme .button {
+    background-color: #CDE5D7;
+    color: #9d8189;
+}
 
 div.button:hover {
-    background-color: blueviolet;
+    background-color: #537A5A;
     cursor: pointer;
 }
 
-#popup {
-    position: absolute;
-    top: 30%;
-    left: 35%; 
-    right: 50%; 
-    width: 200px;
-    margin: 100px;
-    background: lightblue;
-    border-radius: 14px;
-    text-align: center;
-    font-size: 50px;
+body.light-theme div.button:hover {
+    background-color: #BCF4DE;
 }
 
 #ip3 {
     margin-left: 72%;
-    background-color: #194649;
+    background-color: #537A5A;
+}
+
+body.light-theme #ip3 {
+    background-color: #BCF4DE;
+}
+
+#mode {
+    padding-left: 60px;
+    padding-top: 80px;
+    background-color: #EEC6CA;
+    border-width: 0px;
+    border-bottom-right-radius: 35px;
+}
+
+body.light-theme #mode {
+    background-color: #474A48;
 }
