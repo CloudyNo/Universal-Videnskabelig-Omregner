@@ -10,18 +10,19 @@
     </head>
     <body>
         <div class="container">
-            <div class="inpt">
-                <!--input der kører functionen 'update' hver gang der er nyt input-->
-                <input id="ip1" oninput="update(), doit()">
-                <input id="ip2" oninput="update(), doit()">
-            </div>
+            <!--input der kører functionen 'update' hver gang der er nyt input-->
+            <input class="button" id="ip1" oninput="update(), doit()"><br>
+
             <!--input der ikke kører nogen function da det er vores output-->
-            <input id="ip3">
+            <input class="button" id="ip3">
+
             <div class="container2">
+                <!--input der kører functionen 'update' hver gang der er nyt input-->
+                <input class="button" id="ip2" oninput="update(), doit()"><br><br>
                 <div class="button">
                     Hydrogen
                 </div>
-                <div class="button">
+                <div class="button" onclick="update(), doit(), oxygen()">
                     Oxygen
                 </div>
                 <div class="button">
@@ -44,6 +45,10 @@
             var masse;
             var molar;
             var stof;
+
+            function oxygen() {
+                var molar = 15.9994;
+            }
 
             async function update() {
                 // variabel angivning som tager input fra 'ip1' og angiver det som input1
@@ -150,6 +155,7 @@
             }
 
             async function doit() {
+                console.log(masse+", "+molar+", "+stof)
                 // siden 'stof' og 'masse' er bestemt inden i en anden function, så er den blevet bestemt globalt
                 if (masse !== undefined && stof !== undefined) {
                     console.log("masse & stof")

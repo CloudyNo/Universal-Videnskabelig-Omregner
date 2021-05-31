@@ -5,49 +5,63 @@ body {
 }
 
 .container {
-    padding: 25%;
-    position: absolute;
+    margin-left: 33%;
+    margin-right: 33%;
+    margin-top: 10%;
+    position: center;
+    background-image: url("/Untitled.png");
+    padding: 10px;
+    border-radius: 14px;
 }
 
 .container2 {
-    position: absolute;
+    position: center;
 }
 
 .inpt {
     margin: auto;
-    padding: 10px;
     background-color: lightgrey;
     color: white;
     border-radius: 16px;
     border: solid 4px;
     border-color: coral;
-}
-
-input {
-    margin-left: 10px;
-    margin-right: 10px;
-    background-color: coral;
-    border-radius: 8px;
-    border-color: white;
-    border-width: 2px;
+    padding: 3px;
+    display: inline-block;
 }
 
 input:focus, textarea:focus, select:focus {
     outline: 0px !important;
+    background-color: blueviolet;
+}
+
+input:hover {
+    background-color: blueviolet;
+}
+
+p {
+    float: top;
+}
+
+input {
+    padding-top: 5px !important;
+    padding-bottom: 4px !important;
 }
 
 .button {
     background: #3498db;
-    border-radius: 3px;
+    border-radius: 4px;
     color: white;
-    cursor: pointer;
     width: auto;
-    padding: auto;
     display: inline-block;
+    padding: 3px;
+    border: 0px;
 }
+
+
 
 div.button:hover {
     background-color: blueviolet;
+    cursor: pointer;
 }
 
 #popup {
@@ -64,5 +78,6 @@ div.button:hover {
 }
 
 #ip3 {
-    display: inline-block;
+    margin-left: 72%;
+    background-color: #194649;
 }
