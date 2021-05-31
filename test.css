@@ -72,10 +72,12 @@ body.light-theme div.button:hover {
 #ip3 {
     margin-left: 72%;
     background-color: #537A5A;
+    color: #cfd3cf;
 }
 
 body.light-theme #ip3 {
     background-color: #BCF4DE;
+    color: #857d79;
 }
 
 #mode {

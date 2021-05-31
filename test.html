@@ -21,16 +21,16 @@
             <div class="container2">
                 <!--input der kører functionen 'update' hver gang der er nyt input-->
                 <input class="button" id="ip2" oninput="update(), doit()"><br><br>
-                <div class="button">
+                <div class="button" onclick="update(), bolar(), hydrogen()">
                     Hydrogen
                 </div>
-                <div class="button" onclick="update(), molar()">
+                <div class="button" onclick="update(), bolar(), oxygen()">
                     Oxygen
                 </div>
-                <div class="button">
+                <div class="button" onclick="update(), bolar(), carbon()">
                     Carbon
                 </div>
-                <div class="button">
+                <div class="button" onclick="update(), bolar(), nitrogen()">
                     Nitrogen
                 </div>
             </div>
@@ -38,7 +38,6 @@
         <script>
             // lang: js
             var i = false;
-            document.getElementById("popup").style.display = "none";
 
             // Bestemmelse af variabler 'stof' og 'masse' så de er globale og kan ændres inde i en funktion
             var masse;
@@ -149,7 +148,7 @@
                 }
             }
 
-            function molar() {
+            function bolar() {
                 molar = 1;
                 doit();
             }
@@ -159,16 +158,22 @@
                 // siden 'stof' og 'masse' er bestemt inden i en anden function, så er den blevet bestemt globalt
                 if (masse !== undefined && stof !== undefined) {
                     console.log("masse & stof")
+                    document.getElementById("ip3").value = 2+2;
+
                     masse = undefined;
                     molar = undefined;
                     stof = undefined;
                 } else if (masse !== undefined && molar !== undefined) {
                     console.log("mass & molar mass")
+                    document.getElementById("ip3").value = 2+2;
+
                     masse = undefined;
                     molar = undefined;
                     stof = undefined;
                 } else if (stof !== undefined && molar !== undefined) {
                     console.log("amount & molar mass")
+                    document.getElementById("ip3").value = 2+2;
+
                     masse = undefined;
                     molar = undefined;
                     stof = undefined;
