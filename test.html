@@ -43,18 +43,20 @@
             var masse;
             var molar;
             var stof;
+            var num1;
+            var num2;
 
             async function update() {
                 // variabel angivning som tager input fra 'ip1' og angiver det som input1
                 var input1 = document.getElementById("ip1").value;
                 // variabel angivning som tager elementet fra input1 og isolerer alle numeraler ved hjælp af regex
-                var num1 = input1.replace(/[^\d\.]+/g, '');
+                num1 = input1.replace(/[^\d\.]+/g, '');
                 // variabel angivning som tager elementet fra input1 og isolerer alle ikke-numeraler ved hjælp af regex
                 var alp1 = input1.replace(/[^\D\.]+/g, '');
 
                 // gentagelse af foroven bare med input2
                 var input2 = document.getElementById("ip2").value;
-                var num2 = input2.replace(/[^\d\.]+/g, '');
+                num2 = input2.replace(/[^\d\.]+/g, '');
                 var alp2 = input2.replace(/[^\D\.]+/g, '');              
 
                 // Genkendelse af enhed og formel
@@ -150,6 +152,29 @@
 
             function bolar() {
                 molar = 1;
+            }
+
+            function hydrogen() {
+                num2 = 1.00784;
+                console.log(num2)
+                doit();
+            }
+
+            function oxygen() {
+                num2 = 15.999;
+                console.log(num2)
+                doit();
+            }
+
+            function carbon() {
+                num2 = 12.0107;
+                console.log(num2)
+                doit();
+            }
+
+            function nitrogen() {
+                num2 = 14.0067;
+                console.log(num2)
                 doit();
             }
 
@@ -157,22 +182,20 @@
                 console.log(masse+", "+molar+", "+stof)
                 // siden 'stof' og 'masse' er bestemt inden i en anden function, så er den blevet bestemt globalt
                 if (masse !== undefined && stof !== undefined) {
-                    console.log("masse & stof")
-                    document.getElementById("ip3").value = 2+2;
+                    document.getElementById("ip3").value = (masse*num1)/(stof*num2)+" g/mol";
 
                     masse = undefined;
                     molar = undefined;
                     stof = undefined;
                 } else if (masse !== undefined && molar !== undefined) {
-                    console.log("mass & molar mass")
-                    document.getElementById("ip3").value = 2+2;
+                    console.log(masse+", "+num1+", "+molar+", "+num2);
+                    document.getElementById("ip3").value = (masse*num1)/(molar*num2)+" mol";
 
                     masse = undefined;
                     molar = undefined;
                     stof = undefined;
                 } else if (stof !== undefined && molar !== undefined) {
-                    console.log("amount & molar mass")
-                    document.getElementById("ip3").value = 2+2;
+                    document.getElementById("ip3").value = molar*stof*num1*num2+" g";
 
                     masse = undefined;
                     molar = undefined;
