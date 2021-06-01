@@ -29,11 +29,11 @@ body.light-theme .container {
 
 input:focus, textarea:focus, select:focus {
     outline: 0px !important;
-    background-color: #537A5A;
+    background-color: #7aaf84;
 }
 
 input:hover {
-    background-color: #537A5A;
+    background-color: #7aaf84;
 }
 
 body.light-theme input:hover {
@@ -61,7 +61,7 @@ body.light-theme .button {
 }
 
 div.button:hover {
-    background-color: #537A5A;
+    background-color: #7aaf84;
     cursor: pointer;
 }
 
@@ -71,7 +71,7 @@ body.light-theme div.button:hover {
 
 #ip3 {
     margin-left: 72%;
-    background-color: #537A5A;
+    background-color: #7aaf84;
     color: #cfd3cf;
 }
 
